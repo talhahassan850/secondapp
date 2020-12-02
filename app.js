@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var usersRouter = require('./routes/users');
 //var session = require('express-session');
-// var sessionAuth = require("./middlewares/sessionAuth");
+//var sessionAuth = require("./middlewares/sessionAuth");
 const connectDB = require('./DB/Connection');
 
 
@@ -24,7 +24,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// app.use(sessionAuth);
+//app.use(sessionAuth);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -51,10 +51,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 module.exports = app;
-
-
-
-
-
-
